@@ -1,26 +1,24 @@
 #!/bin/bash
 echo "Removing old work directories..."
-sudo rm -rf work
-rm -rf ../working-dir-hex0s
+sudo rm -rf genwork
+sudo rm -rf out
+sudo rm -rf /tmp/hexpm
+echo "Removing old ISO..."
+rm -rf Installer.iso
 echo "Generating new work directories..."
-mkdir ../working-dir-hex0s
-cp -r . ../working-dir-hex0s
-mv ../working-dir-hex0s work 
+mkdir genwork 
+mkdir out
 echo 'Installing build dependencies...'
 yes | sudo pacman -Sy git archiso nodejs npm
-echo "Setting up work with scripts..."
-git clone https://github.com/hex0perating/hexpm work/hexpm
-cd work/hexpm
+git clone https://github.com/hex0perating/hexpm /tmp/hexpm
+CURRENTDIR=$PWD
+cd /tmp/hexpm 
 npm run install-deno 
+echo "Setting up work with scripts..."
 npm run compile 
-cp hexpm ../airootfs/usr/local/sbin
-cd ../airootfs/usr/local/sbin/
-echo "Contents of /usr/local/sbin/:"
-ls
-cd ../../../../
+cd $CURRENTDIR
+cp /tmp/hexpm/hexpm airootfs/usr/local/bin/hexpm 
+chmod a+rx airootfs/usr/local/bin/hexpm
 echo "Generating ISO..."
-mkdir genwork
-mkdir out
-sudo mkarchiso -v -w genwork/ -o out/ ../
-mv out/*.iso ../Installer.iso
-echo "ISO has been saved to Installer.iso in the original directory.":
+sudo mkarchiso -v -w genwork/ -o out/ .
+echo "ISO is saved in out/"

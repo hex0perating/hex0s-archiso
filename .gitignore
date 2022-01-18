@@ -1,2 +1,4 @@
-work/
+genwork/
+out/
 Installer.iso
+airootfs/usr/local/bin/hexpm
