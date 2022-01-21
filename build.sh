@@ -9,7 +9,7 @@ echo "Generating new work directories..."
 mkdir genwork 
 mkdir out
 echo 'Installing build dependencies...'
-yes | sudo pacman -Sy git archiso nodejs npm
+yes | sudo pacman -Sy git archiso nodejs npm archiso
 git clone https://github.com/hex0perating/hexpm /tmp/hexpm
 CURRENTDIR=$PWD
 cd /tmp/hexpm 
