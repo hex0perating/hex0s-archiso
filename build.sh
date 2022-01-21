@@ -9,7 +9,10 @@ echo "Generating new work directories..."
 mkdir genwork 
 mkdir out
 echo 'Installing build dependencies...'
-yes | sudo pacman -Sy git archiso nodejs npm archiso
+yes | sudo pacman -Sy git archiso nodejs npm archiso wget
+pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+pacman-key --lsign-key FBA220DFC880C036
+pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 git clone https://github.com/hex0perating/hexpm /tmp/hexpm
 CURRENTDIR=$PWD
 cd /tmp/hexpm 

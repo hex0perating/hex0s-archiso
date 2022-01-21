@@ -1,4 +1,4 @@
 Welcome to hex0s! To install hex0s, run:
-  hexpm install world
+  sudo hexpm install world
 
-NOTE: This OS is a prototype.
+You are currently running an alpha release.
