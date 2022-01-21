@@ -14,8 +14,6 @@ crda
 cryptsetup
 darkhttpd
 ddrescue
-dhclient
-dhcpcd
 diffutils
 dmraid
 dnsmasq
@@ -40,8 +38,6 @@ intel-ucode
 ipw2100-fw
 ipw2200-fw
 irssi
-iw
-iwd
 jfsutils
 kitty-terminfo
 less
@@ -113,8 +109,18 @@ virtualbox-guest-utils-nox
 vpnc
 wireless-regdb
 wireless_tools
-wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
 zsh
+networkmanager
+network-manager-applet
+polybar
+sxhkd
+bspwm
+kitty
+rofi
+zsh
+nitrogen
+firefox
+sddm

@@ -2,3 +2,5 @@ genwork/
 out/
 Installer.iso
 airootfs/usr/local/bin/hexpm
+airootfs/root/dots
+airootfs/usr/local/bin/starship

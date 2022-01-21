@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="archlinux"
-iso_label="ARCH_$(date +%Y%m)"
-iso_publisher="Arch Linux <https://archlinux.org>"
-iso_application="Arch Linux Live/Rescue CD"
+iso_name="hex0s Installer"
+iso_label="HEX0S_$(date +%Y%m)"
+iso_publisher="The Hex0s Team <https://github.com/hex0perating>"
+iso_application="hex0s Installer"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
