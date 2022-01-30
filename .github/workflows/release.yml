@@ -15,7 +15,7 @@ jobs:
       - name: Install Arch Linux
         run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
       - name: Fix Keyring p1
-        run: sudo pacman -Sy archlinux-keyring
+        run: sudo pacman -Sy archlinux-keyring --no-confirm
       - name: Install mkarchiso
         run: sudo pacman --noconfirm -S archiso
       - name: Build ISO
