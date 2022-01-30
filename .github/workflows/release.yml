@@ -1,0 +1,24 @@
+name: Publish ISO
+
+on: 
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    name: Build ISO and Create Release with Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build ISO
+        run: ./build.sh
+      - name: Get Version
+        id: get_version
+        uses: battila7/get-version-action@v2.2.1
+      - name: Publish Artifact
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "out/*.iso"
+          token: ${{ secrets.GITHUB_TOKEN }}
