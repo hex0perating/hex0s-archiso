@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Install Arch Linux
         run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
-      - name: Fix Keyring p1
-        run: sudo pacman -Sy archlinux-keyring --noconfirm
+      - name: Fix Keyring
+        run: sudo cp pacman.conf /etc/pacman.conf
       - name: Install mkarchiso
-        run: sudo pacman --noconfirm -S archiso
+        run: sudo pacman --noconfirm -Sy archiso
       - name: Build ISO
         run: ./build.sh
       - name: Get Version
