@@ -8,14 +8,10 @@ on:
 jobs:
   build:
     name: Build ISO and Create Release with Artifacts
-    runs-on: ubuntu-latest
+    runs-on: archlinux
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install Arch Linux
-        run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
-      - name: Fix Keyring
-        run: sudo cp pacman.conf /etc/pacman.conf
       - name: Install mkarchiso
         run: sudo pacman --noconfirm -Sy archiso
       - name: Build ISO
